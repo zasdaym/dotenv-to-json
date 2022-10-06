@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>.env to JSON</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body x-data="global">
+    <div class="container">
+      <div class="item">
+        <label for="dotenv-textarea">.env:</label>
+        <textarea
+          x-model="dotenvText"
+          id="dotenv-textarea"
+          autocapitalize="off"
+          autocomplete="off"
+          spellcheck="false"
+          cols="45"
+          rows="45"
+          autofocus
+        ></textarea>
+      </div>
+      <div class="item">
+        <label for="json-textarea" id="json-textarea">JSON:</label>
+        <textarea
+          x-text="dotenvToJson(dotenvText)"
+          id="json-textarea"
+          autocapitalize="off"
+          autocomplete="off"
+          spellcheck="false"
+          cols="45"
+          rows="45"
+          readonly
+        ></textarea>
+      </div>
+    </div>
+    <script src="//unpkg.com/alpinejs" async defer></script>
+    <script src="script.js"></script>
+  </body>
+</html>
