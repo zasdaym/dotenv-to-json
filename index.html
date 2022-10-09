@@ -5,38 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>.env to JSON</title>
-    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
   </head>
-  <body x-data="global">
-    <div class="container">
-      <div class="item">
-        <label for="dotenv-textarea">.env:</label>
-        <textarea
-          x-model="dotenvText"
-          id="dotenv-textarea"
-          autocapitalize="off"
-          autocomplete="off"
-          spellcheck="false"
-          cols="45"
-          rows="45"
-          autofocus
-        ></textarea>
+  <body>
+    <section class="section" x-data="global">
+      <div class="container">
+        <div class="columns">
+          <div class="column">
+            <div class="field">
+              <label class="label" for="dotenv-textarea">.env:</label>
+              <textarea
+                class="textarea"
+                x-model="dotenvText"
+                id="dotenv-textarea"
+                autocapitalize="off"
+                autocomplete="off"
+                spellcheck="false"
+                autofocus
+              ></textarea>
+            </div>
+          </div>
+          <div class="column">
+            <div class="field">
+              <label class="label" for="json-textarea" id="json-textarea"
+                >JSON:</label
+              >
+              <textarea
+                class="textarea"
+                x-text="dotenvToJson(dotenvText)"
+                id="json-textarea"
+                autocapitalize="off"
+                autocomplete="off"
+                spellcheck="false"
+                readonly
+              ></textarea>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="item">
-        <label for="json-textarea" id="json-textarea">JSON:</label>
-        <textarea
-          x-text="dotenvToJson(dotenvText)"
-          id="json-textarea"
-          autocapitalize="off"
-          autocomplete="off"
-          spellcheck="false"
-          cols="45"
-          rows="45"
-          readonly
-        ></textarea>
-      </div>
-    </div>
-    <script src="//unpkg.com/alpinejs" async defer></script>
+    </section>
+    <script src="https://unpkg.com/alpinejs" async defer></script>
     <script src="script.js"></script>
   </body>
 </html>
