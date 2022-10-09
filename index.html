@@ -11,15 +11,15 @@
     />
   </head>
   <body>
-    <section class="section" x-data="global">
+    <section x-data="global" class="section">
       <div class="container">
         <div class="columns">
           <div class="column">
             <div class="field">
               <label class="label" for="dotenv-textarea">.env:</label>
               <textarea
-                class="textarea"
                 x-model="dotenvText"
+                class="textarea"
                 id="dotenv-textarea"
                 autocapitalize="off"
                 autocomplete="off"
@@ -30,12 +30,10 @@
           </div>
           <div class="column">
             <div class="field">
-              <label class="label" for="json-textarea" id="json-textarea"
-                >JSON:</label
-              >
+              <label class="label" for="json-textarea">JSON:</label>
               <textarea
-                class="textarea"
                 x-text="dotenvToJson(dotenvText)"
+                class="textarea"
                 id="json-textarea"
                 autocapitalize="off"
                 autocomplete="off"
